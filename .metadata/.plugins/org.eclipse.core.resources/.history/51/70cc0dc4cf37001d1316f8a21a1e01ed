@@ -1,0 +1,5 @@
+<h2>Groups used for this test run</h2><table border="1">
+<tr> <td align="center"><b>Group name</b></td><td align="center"><b>Methods</b></td></tr><tr><td>backlog</td><td>Wallmart_FakeSite.test4_checkout()[pri:0, instance:com.wallmart.Wallmart_FakeSite@3cebbb30]<br/></td></tr>
+<tr><td>regression</td><td>Wallmart_FakeSite.test5_placeorder()[pri:0, instance:com.wallmart.Wallmart_FakeSite@3cebbb30]<br/>Wallmart_FakeSite.test6_shiporder()[pri:0, instance:com.wallmart.Wallmart_FakeSite@3cebbb30]<br/></td></tr>
+<tr><td>system</td><td>Wallmart_FakeSite.test6_shiporder()[pri:0, instance:com.wallmart.Wallmart_FakeSite@3cebbb30]<br/>Wallmart_FakeSite.test4_checkout()[pri:0, instance:com.wallmart.Wallmart_FakeSite@3cebbb30]<br/></td></tr>
+</table>

@@ -1,0 +1,73 @@
+package com.madison.tests;
+
+import org.testng.annotations.Test;
+
+import com.madison.pages.RegisterPage;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import org.testng.annotations.BeforeTest;
+
+import static org.testng.Assert.assertTrue;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterTest;
+
+public class RegistrarUserTest {
+	
+	WebDriver driver;
+	RegisterPage register;
+	
+  @BeforeTest
+  public void setup() {
+	driver = WebDriverManager.chromedriver().create();
+	register = new RegisterPage(driver);
+  }
+	
+  @Test
+  public void testRegisterSuccess() {
+	  
+	  String email    = "renanc26@gmail.com";
+	  String password = "qweasd"; 
+	  
+	  register.with("Renan","A.","Chacaliaza", email,password,password);
+	  
+		assertTrue(register.succesRegister());	  
+		register.MessageOutpot("Se registró ok");
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		//SE DEBE HABILITAR LA SECCION LOG PARA DESPUES CERRAR SESION
+		register.LogClick();
+//		register.MessageOutpot("Debe cargar la seccion log ok");
+		
+		//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		register.AccountLogout();
+//		register.MessageOutpot("Se ha cerrado la sesion");
+		register.successLogout();
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		//Habilitar el account
+		register.LogClick();
+//		register.MessageOutpot("click en account");
+		//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		register.AccountLogin();
+//		register.MessageOutpot("click en Login");
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		
+		register.Login(email,password);
+		register.MessageOutpot("Datos de sesion iniciados");
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		
+  }
+
+  @AfterTest
+  public void tearDown() {
+	  //driver.quit();
+  }
+
+}

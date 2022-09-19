@@ -1,0 +1,38 @@
+package com.orange.tests;
+
+import org.testng.annotations.Test;
+
+import com.orange.pages.BasicLoginPage;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import org.testng.annotations.BeforeMethod;
+
+import static org.testng.Assert.assertTrue;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+
+public class BasicLoginTest {
+  
+	WebDriver driver;
+	BasicLoginPage login;
+	
+  @BeforeMethod
+  public void setup() {
+	  driver = WebDriverManager.chromedriver().create();
+	  login = new BasicLoginPage(driver);
+  }
+
+  @Test
+  public void testLoginOrange() {
+	 login.with("Admin", "admin1233");
+	 assertTrue(login.successLogin());  
+  }
+  
+  @AfterMethod
+  public void tearDown() {
+	  driver.quit();
+  }
+
+}

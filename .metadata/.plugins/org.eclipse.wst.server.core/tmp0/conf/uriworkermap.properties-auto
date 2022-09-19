@@ -1,0 +1,34 @@
+###################################################################
+# Auto generated configuration. Dated: Tue Sep 06 20:12:54 PET 2022
+###################################################################
+
+#
+# Default worker to be used through our mappings
+#
+default.worker=ajp12
+
+#
+# Root context mounts for Tomcat
+#
+/servlet/*=$(default.worker)
+/*.jsp=$(default.worker)
+
+#########################################################
+# Auto configuration for the /PruebaWEB context starts.
+#########################################################
+
+#
+# The following line mounts all JSP file and the /servlet/ uri to tomcat
+#
+/PruebaWEB/servlet/*=$(default.worker)
+/PruebaWEB/*.jsp=$(default.worker)
+
+#
+# If you want tomcat to serve all the resources (including static) that
+# are part of the /PruebaWEB context, uncomment the following line
+#
+# /PruebaWEB/*=$(default.worker)
+#######################################################
+# Auto configuration for the /PruebaWEB context ends.
+#######################################################
+

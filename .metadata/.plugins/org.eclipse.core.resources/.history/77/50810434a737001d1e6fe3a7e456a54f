@@ -1,0 +1,11 @@
+import org.openqa.selenium.By;
+
+public class Account {
+
+String firstname;
+String middlename
+String lastname;
+String Email_address;
+String Password;     
+String Confirmation; 
+}

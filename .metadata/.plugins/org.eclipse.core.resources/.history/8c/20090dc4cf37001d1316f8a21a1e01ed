@@ -1,0 +1,58 @@
+<table border='1'>
+<tr>
+<th>Class name</th>
+<th>Method name</th>
+<th>Groups</th>
+</tr><tr>
+<td>com.wallmart.Wallmart_FakeSite</td>
+<td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@Test</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>test7_logout</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td>test5_placeorder</td>
+<td>regression </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>test3_addtobag</td>
+<td>regression smoke integration </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>test2_searchitems</td>
+<td>regression smoke </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>test4_checkout</td>
+<td>system backlog </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>test6_shiporder</td>
+<td>system regression </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>test1_login</td>
+<td>smoke </td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@BeforeClass</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@BeforeMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterMethod</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@AfterClass</td>
+</tr>
+</table>

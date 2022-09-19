@@ -1,0 +1,74 @@
+package com.madison.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.madison.util.BasePage;
+
+public class RegisterPage extends BasePage{
+  
+	
+	By Inputfirstname    = By.id("firstname");
+	By InputMiddlename   = By.id("middlename");
+	By InputLastname     = By.id("lastname");
+	By InputEmail_address= By.id("email_address");
+	By InputPassword     = By.id("password");
+	By InputConfirmation = By.id("confirmation");
+	By SubmitButton 	 = By.xpath("//*[@id=\"form-validate\"]/div[2]/button");
+	By successRegister   = By.xpath("//*[@id=\"top\"]/body/div/div[2]/div[2]/div/div[2]/div[2]/div");
+	
+	By LogTab   = By.xpath("//*[@id=\"header\"]/div/div[2]/div/a");
+	By Logout   = By.xpath("//*[@id=\"header-account\"]/div/ul/li[5]/a");
+	By succesLoginDiv = By.xpath("//*[@id=\"top\"]/body/div/div[2]/div[2]/div/div/div[2]");
+
+	
+	By LoginEmail    = By.id("email");
+	By LoginPassword = By.id("pass");
+	By buttonClick   = By.name("send");
+	
+	String url = "http://demo-store.seleniumacademy.com/customer/account/create/";
+
+	
+	public RegisterPage(WebDriver driver) {
+		super(driver);
+		visit(url);
+	}
+	
+	public void with(String firstname,String middlename,String lastname,
+			String email_address,String password,String confirmation) {
+		
+		type(Inputfirstname,firstname);
+		type(InputMiddlename,middlename);
+		type(InputLastname,lastname);
+		type(InputEmail_address,email_address);
+		type(InputPassword,password);
+		type(InputConfirmation,confirmation);
+		
+		Submit(SubmitButton);
+  }
+	
+	public boolean succesRegister() {
+		return isDisplayed(successRegister);
+	}
+
+	public void LogClick() {
+		click(LogTab);
+	}	
+	
+	public void logout() {
+		click(Logout); 
+	}
+	
+	public boolean successLogout() {
+		return isDisplayed(succesLoginDiv);
+	}
+	
+
+	public boolean successLogclic() {
+		return isDisplayed(Logout);
+	}
+
+	
+	
+}
+ 

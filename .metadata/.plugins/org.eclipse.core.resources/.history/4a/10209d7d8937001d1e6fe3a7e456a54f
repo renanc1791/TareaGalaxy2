@@ -1,0 +1,5 @@
+package com.madison.util;
+
+public class BasePage {
+
+}

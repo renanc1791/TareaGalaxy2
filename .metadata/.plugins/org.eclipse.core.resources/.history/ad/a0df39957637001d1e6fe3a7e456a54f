@@ -1,0 +1,40 @@
+package com.orange.pages;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class BasicLoginPage {
+	
+	WebDriver driver;
+	
+	By usernameInput = By.name("username");
+	By passwordInput = By.name("password");
+	By submitButton = By.cssSelector(".oxd-button");
+	By successLogin = By.xpath(".//div[@class='oxd-topbar-header-title']//span//h6");
+	
+	String url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+	
+	public BasicLoginPage(WebDriver driver) {
+		this.driver = driver;
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.get(url);
+	}
+	
+	public void with(String username, String password) {
+		driver.findElement(usernameInput).sendKeys(username);
+		driver.findElement(passwordInput).sendKeys(password);
+		driver.findElement(submitButton).submit();
+	}
+	
+	public boolean successLogin() {
+		
+		try {
+		return driver.findElement(successLogin).isDisplayed();
+		}catch (Exception e) {
+			System.out.println("error at: "+ e);
+		}
+	}
+
+}

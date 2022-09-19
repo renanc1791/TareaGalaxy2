@@ -1,0 +1,11 @@
+import org.openqa.selenium.By;
+
+public class Account {
+
+String firstname {get; set;}
+middlename
+lastname
+InputEmail_address
+InputPassword     
+InputConfirmation 
+}
