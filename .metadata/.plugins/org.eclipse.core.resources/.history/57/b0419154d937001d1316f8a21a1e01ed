@@ -1,0 +1,9 @@
+package com.madison.tests;
+
+import org.testng.annotations.Test;
+
+public class ShopingTest {
+  @Test
+  public void f() {
+  }
+}

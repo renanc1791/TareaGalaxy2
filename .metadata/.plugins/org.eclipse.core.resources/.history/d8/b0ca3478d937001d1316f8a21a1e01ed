@@ -1,0 +1,23 @@
+package com.madison.tests;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class ShopingTest {
+	
+	WebDriver driver;
+	
+  @Test
+  public void setup() {
+	  
+	  driver = WebDriverManager.chromedriver().create();
+	  driver.manage().window().maximize();
+	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	  driver.get("http://demo-store.seleniumacademy.com/");
+	  
+  }
+}
