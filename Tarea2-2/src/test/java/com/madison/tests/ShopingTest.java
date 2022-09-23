@@ -26,11 +26,11 @@ public class ShopingTest {
 	  Highlighter.highlightElement(driver, seleccionarItem);
 	  seleccionarItem.click();
 	  
-	  WebElement seleccionarColor = driver.findElement(By.xpath("//*[@id=\"swatch26\"]"));
+	  WebElement seleccionarColor = driver.findElement(By.xpath("//*[@id=\"swatch20\"]"));
 	  Highlighter.highlightElement(driver, seleccionarColor);
 	  seleccionarColor.click();
 	  
-	  WebElement seleccionarTalla = driver.findElement(By.xpath("//*[@id=\"swatch79\"]"));
+	  WebElement seleccionarTalla = driver.findElement(By.xpath("//*[@id=\"swatch80\"]"));
 	  Highlighter.highlightElement(driver, seleccionarTalla);
 	  seleccionarTalla.click();
 
@@ -49,25 +49,94 @@ public class ShopingTest {
 	  //Agregar segundo producto
   	  
 
-System.out.println("Adding first product");
+
 	  
 	  //Seleccionar 1 item
 	  WebElement seleccionarItem2 = driver.findElement(By.xpath("//*[@id=\"top\"]/body/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[1]/a"));
 	  Highlighter.highlightElement(driver, seleccionarItem2);
 	  seleccionarItem2.click();
 	  
-	  WebElement seleccionarColor2 = driver.findElement(By.xpath("//*[@id=\"swatch27\"]"));
+	  WebElement seleccionarColor2 = driver.findElement(By.xpath("//*[@id=\"swatch22\"]"));
 	  Highlighter.highlightElement(driver, seleccionarColor2);
-	  seleccionarColor.click();
+	  seleccionarColor2.click();
 	  
-	  WebElement seleccionarTalla2 = driver.findElement(By.xpath("//*[@id=\"swatch73\"]"));
+	  WebElement seleccionarTalla2 = driver.findElement(By.xpath("//*[@id=\"swatch80\"]"));
 	  Highlighter.highlightElement(driver, seleccionarTalla2);
-	  seleccionarTalla.click();
+	  seleccionarTalla2.click();
 
-	  //WebElement bntAgregar2 = driver.findElement(By.xpath("//*[@id=\"product_addtocart_form\"]/div[3]/div[6]/div[2]/div[2]/button"));
-	  Highlighter.highlightElement(driver, bntAgregar);
-	  bntAgregar.submit();
+	  WebElement bntAgregar2 = driver.findElement(By.xpath("//*[@id=\"product_addtocart_form\"]/div[3]/div[6]/div[2]/div[2]/button"));
+	  Highlighter.highlightElement(driver, bntAgregar2);
+	  bntAgregar2.submit();
 
+	  System.out.println("Second product added");
+	  
+	 //Proceder al Checkout 
+	  WebElement btnProccedToCheckout= driver.findElement(By.xpath("//*[@id=\"top\"]/body/div/div[2]/div[2]/div/div/div[2]/div[3]/div/ul/li/button"));
+	  Highlighter.highlightElement(driver, btnProccedToCheckout);  
+	  btnProccedToCheckout.click();
+	  
+	  System.out.println("Adding - btnProccedToCheckout");	  
+	  
+	  WebElement textCorreo = driver.findElement(By.id("login-email"));
+	  Highlighter.highlightElement(driver, textCorreo);
+	  textCorreo.sendKeys("renanc32@gmail.com");
+	  WebElement textPass = driver.findElement(By.id("login-password"));
+	  Highlighter.highlightElement(driver, textPass);
+	  textPass.sendKeys("qweasd");
+	
+	  System.out.println("Adding - Credenciales");
+	  
+	  WebElement btnLoginUser = driver.findElement(By.xpath("//*[@id=\"checkout-step-login\"]/div/div[2]/div/button"));
+	  Highlighter.highlightElement(driver, btnLoginUser);  
+	  btnLoginUser.click();
+	  System.out.println("Adding - LOGIN");
+	  
+	  WebElement btnBilling = driver.findElement(By.xpath("//*[@id=\"billing-buttons-container\"]/button"));
+	  Highlighter.highlightElement(driver, btnBilling);
+	  btnBilling.click();
+	  System.out.println("Adding - btnBilling");
+	  
+	  //Billing Continnue
+      //*[@id="billing-buttons-container"]/button
+	  //click
+	  WebElement btnContinueBilling = driver.findElement(By.xpath("//*[@id=\"billing-buttons-container\"]/button"));
+	  Highlighter.highlightElement(driver, btnContinueBilling);
+	  btnContinueBilling.click();
+	  
+	  System.out.println("Adding - btnContinueBilling");
+	  
+	  //Shipping Method
+	  //*[@id="s_method_freeshipping_freeshipping"]
+      //*[@id="shipping-method-buttons-container"]/button
+	  //click
+	  
+	  WebElement shippingMethd = driver.findElement(By.xpath("//*[@id=\"s_method_freeshipping_freeshipping\"]"));
+	  Highlighter.highlightElement(driver, shippingMethd);
+	  shippingMethd.click();
+	  System.out.println("Adding - shippingMethd");
+	
+	  WebElement shippingClick = driver.findElement(By.xpath("//*[@id=\"shipping-method-buttons-container\"]/button"));
+	  Highlighter.highlightElement(driver, shippingClick);
+	  shippingClick.click();
+	  System.out.println("Adding - shippingClick");
+	  
+	  //Payment Method
+      //*[@id="payment-buttons-container"]/button
+	  
+	  WebElement paymenthClick = driver.findElement(By.xpath("//*[@id=\"payment-buttons-container\"]/button"));
+	  Highlighter.highlightElement(driver, paymenthClick);
+	  paymenthClick.click();
+	  System.out.println("Adding - paymenthClick");
+	  
+	  //Place Order
+      //*[@id="review-buttons-container"]/button
+	  //click
+	  WebElement placeOrderClic = driver.findElement(By.xpath("//*[@id=\"review-buttons-container\"]/button"));
+	  Highlighter.highlightElement(driver, placeOrderClic);
+	  placeOrderClic.click();
+	  
+	  System.out.println("Adding - placeOrderClic");
+	  
 	  
 	  
   }

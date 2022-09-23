@@ -31,7 +31,7 @@ public class RegistrarUserTest {
   @Test
   public void testRegisterSuccess() {
 	  
-	  String email    = "renanc33@gmail.com";
+	  String email    = "renanc34@gmail.com";
 	  String password = "qweasd"; 
 	  
 	    register.newAccount("Renan","A.","Chacaliaza", email,password,password);
